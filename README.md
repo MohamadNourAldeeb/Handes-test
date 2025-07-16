@@ -54,8 +54,8 @@
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/handes.git
-cd handes
+git clone https://github.com/MohamadNourAldeeb/Handes-test.git
+cd Handes-test
 ```
 
 ### 2. Install dependencies
