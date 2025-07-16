@@ -1,0 +1,54 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Server Error Alert</title>
+        <style>
+            body { background-color: #ff0000; /* Red background */ color: #fff;
+            /* White text */ font-family: sans-serif; display: flex;
+            justify-content: center; align-items: center; min-height: 100vh;
+            margin: 0; } .container { background-color: rgba(0, 0, 0, 0.8);
+            padding: 30px; border-radius: 8px; } h1 { text-align: center;
+            margin-bottom: 20px; } .error-details { margin-top: 20px; }
+            .error-details li { list-style: none; margin-bottom: 10px; }
+            .error-details strong { display: inline-block; width: 120px; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>🚨 Server Error Alert 🚨</h1>
+            <div class="error-details">
+                <ul>
+                    <li>
+                        <strong>Error Message:</strong>
+                        <span id="error-message">{{message}}</span>
+                    </li>
+                    <li>
+                        <strong>Code:</strong>
+                        <span id="error-code">{{code}}</span>
+                    </li>
+                    <li>
+                        <strong>File:</strong>
+                        <span id="error-file">{{file}}</span>
+                    </li>
+                    <li>
+                        <strong>Line:</strong>
+                        <span id="error-line">{{line}}</span>
+                    </li>
+                    <li>
+                        <strong>Error Number:</strong>
+                        <span id="error-number">{{error_number}}</span>
+                    </li>
+                    <li>
+                        <strong>Error Date:</strong>
+                        <span id="error-date">{{date}}</span>
+                    </li>
+                </ul>
+                <p>
+                    <strong>Note:</strong>
+                    Please check server logs for more information.
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

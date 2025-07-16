@@ -1,0 +1,619 @@
+{
+	"info": {
+		"_postman_id": "4a634245-0ec2-4a82-92a4-b2ac9801816b",
+		"name": "HANDES",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40934516",
+		"_collection_link": "https://iam-here.postman.co/workspace/Team-Workspace~ecfb02e3-1290-4df5-8f09-d8160a64840a/collection/40934516-4a634245-0ec2-4a82-92a4-b2ac9801816b?action=share&source=collection_link&creator=40934516"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"    if(pm.response.code===200){\r",
+									"          pm.environment.set('TOKEN',pm.response.json()['data'][\"token\"])\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "API-KEY",
+								"value": "{{API-KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "device",
+								"value": "{{DEVICE}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"mohamad2114341@gmail.com<script>\",\r\n    \"password\":\"Test@1234\",\r\n    \"author_name\":\"noor\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/auth/register",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "log-in",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"    if(pm.response.code===200){\r",
+									"          pm.environment.set('TOKEN',pm.response.json()['data'][\"token\"])\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "API-KEY",
+								"value": "{{API-KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "device",
+								"value": "{{DEVICE}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\":\"mohamad2114341@gmail.com\",\r\n    \"password\":\"Test@1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/auth/log-in",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"auth",
+								"log-in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "send-code",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "API-KEY",
+								"value": "{{API-KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "device",
+								"value": "{{DEVICE}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"mohamad2114341@gmail.com\",\r\n    \"type\":\"verify\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/auth/send-code",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"auth",
+								"send-code"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verification",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "API-KEY",
+								"value": "{{API-KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "device",
+								"value": "{{DEVICE}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"mohamad2114341@gmail.com\",\r\n    \"otp_type\":\"verify\",\r\n    \"otp\":\"1114\",\r\n    \"new_password\":null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/auth/verification",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"auth",
+								"verification"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refresh-token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"    if(pm.response.code===200){\r",
+									"          pm.environment.set('TOKEN',pm.response.json()['data'][\"token\"])\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "API-KEY",
+								"value": "{{API-KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "device",
+								"value": "{{DEVICE}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refresh_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbmNyeXB0ZWQiOiI3Y2U5ZGZkMjZmNWVjZjY0MDMwMGRjMmZjMTA3NTZiMWY2YmIyOGNkMGUxNDY3MmY1NzA0MDcxMGU0NWM0YjQ3NDMzNjRkMGZkYTVjZjQ1OTY4MTVhMzY1ZWYzMzdjMTcyNjYxOWYzMGFkYWUwMWM2ZGM1Y2E0NjJiODgxNWRhNTgxYWY4NDMxMGFjMWYwMmEyODE3MjVhMGY2NDhmODc1MzExY2Q5MjEyYmYyMzY1ODRkNzUxY2QzMzgxNTYxZjJlZTA4Y2I1ZjdkYTY0YjE5Yjk2ZGJlZjQ1ZjJhMWExNDk2ZjM0MzdlM2YyMDE0NjdmMzU5ZGQxZWQ2N2M0MTJiNWUwZGFkOThlZjA4M2I5ZGExODgwNWVkMzBhNTc2NWUiLCJpYXQiOjE3NTI2ODA5NDEsImV4cCI6MTc1NTI3Mjk0MX0.fJr7eDyCqnANQ5bqPy7WjSSieBUT6__uRqR6Tt6fhXM\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/auth/refresh-token",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"auth",
+								"refresh-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change-password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "API-KEY",
+								"value": "{{API-KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "device",
+								"value": "{{DEVICE}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"old_password\":\"Test@1234\",\r\n    \"new_password\":\"Test@12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/auth/change-password",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"auth",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "log-out",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "API-KEY",
+								"value": "{{API-KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "device",
+								"value": "{{DEVICE}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/auth/log-out",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"auth",
+								"log-out"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "NOTE",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "API-KEY",
+								"value": "{{API-KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "device",
+								"value": "{{DEVICE}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"handes test1211\",\r\n    \"content\":\"hello can i make some thing\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/note",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"note"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "API-KEY",
+								"value": "{{API-KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "device",
+								"value": "{{DEVICE}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/note/md65uzj9wcupl21n209",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"note",
+								"md65uzj9wcupl21n209"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "API-KEY",
+								"value": "{{API-KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "device",
+								"value": "{{DEVICE}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/note?size=10&page=1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"note"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "API-KEY",
+								"value": "{{API-KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "device",
+								"value": "{{DEVICE}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/note/md65xgukidmdg4l0bwj",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"note",
+								"md65xgukidmdg4l0bwj"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "API-KEY",
+								"value": "{{API-KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "device",
+								"value": "{{DEVICE}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"handes\",\r\n    \"content\":\"hello can i make some thing\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/note/md65xgukidmdg4l0bwj",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"note",
+								"md65xgukidmdg4l0bwj"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{TOKEN}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
